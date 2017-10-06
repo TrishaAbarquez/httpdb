@@ -19,7 +19,7 @@ export class ModifypersonComponent implements OnInit {
   person: object;
 
   constructor(private dbService: DbService) { }
-
+ change = true;
   ngOnInit() {
   }
 

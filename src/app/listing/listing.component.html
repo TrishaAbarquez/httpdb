@@ -14,9 +14,12 @@
       <td>{{ person.firstName }}</td>
       <td>{{ person.lastName }}</td>
       <td>
-        <button (click)="modifyData(person.id)" class="btn btn-warning">
+        <button *ngIf="change" (click)="modifyData(person.id)" class="btn btn-warning">
            Edit 
         </button>
+         <button  (click)="deleteData(person.id)" class="btn btn-warning">
+          Delete 
+       </button> 
       </td>
       <td>
         <a href="https://trishaabarquez-57c26.firebaseio.com/people/{{ person.id }}.json">Link</a>

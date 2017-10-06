@@ -19,14 +19,15 @@ import { PagerService } from '../services/pager.service';
 
 export class ListingComponent implements OnInit {
   @Output() modifyClicked = new EventEmitter<any>();
-
+  @Output() deleteClicked = new EventEmitter<any>();
   baseURL = 'https://trishaabarquez-57c26.firebaseio.com';
   rootNode = 'people';
 
   peopleCollection: Array<IPerson> = [];
-
+  change = true;
   constructor(private dbservice: DbService) { }
-
+  remove = true;
+  
   ngOnInit() {
     this.loadData();
   }
@@ -44,6 +45,10 @@ export class ListingComponent implements OnInit {
   modifyData(dataID) {
     // console.log(dataID);
     this.modifyClicked.emit(dataID);
+  }
+    deleteData(dataID) {
+    // console.log(dataID);
+    this.deleteClicked.emit(dataID);
   }
 
 //-----------------------------------------------------
